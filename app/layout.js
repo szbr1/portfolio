@@ -1,4 +1,43 @@
 import "./globals.css";
+import {Nunito_Sans, Inter, Poppins, Nova_Square, Onest, Mochiy_Pop_P_One} from "next/font/google"
+
+
+ 
+const nunitoSans = Nunito_Sans({
+  subsets: ['latin'],
+  weight: ['200','300', '600', '800'],
+  variable: "--font-nunito-sans"
+})
+
+const mochy = Mochiy_Pop_P_One({
+  subsets: ['latin'],
+  weight: ["400"],
+  variable: "--font-mochy"
+})
+
+const onest = Onest({
+  subsets: ['latin'],
+ weight: ['200' , '400' , '600', '800'],
+ variable: "--font-onest"
+})
+
+const poppins = Poppins({
+   subsets: ['latin'],
+  weight: ['200','400','600', '800'],
+  variable: "--font-poppins"
+})
+
+const nova = Nova_Square({
+  subsets: ['latin'],
+ weight: ['400'],
+ variable: "--font-nova_square"
+})
+
+const inter = Inter({
+  subsets: ['latin'],
+ weight: ['200', '400', '600', '800'],
+ variable: "--font-inter"
+})
 
 export const metadata = {
   title: "Create Next App",
@@ -7,8 +46,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en"
+    className={`${nunitoSans.variable} ${mochy.variable} ${inter.variable} ${poppins.variable} ${nova.variable} ${onest.variable}`}
+    >
+      <body className={`px-[8px] ${nunitoSans.className}`} >
         {children}
       </body>
     </html>
