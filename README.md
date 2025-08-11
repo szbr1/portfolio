@@ -5,3 +5,11 @@
 4. Poppins     = sec titles :  medium
 5. Nova Square = social link: 
 6. Oneset      = cntct area :  thin   
+
+
+ <div className='w-full flex justify-between items-center mt-20'>
+                <Image src={'/next.js.png'} width={40} height={40} alt='' />
+                <Image src={'/react.png'} width={40} height={40} alt='' />
+                <Image src={'/express.png'} width={40} height={40} alt='' />
+                <Image src={'/mongodb.png'} width={40} height={40} alt='' />
+            </div>

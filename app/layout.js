@@ -1,11 +1,13 @@
+import Header from "@/components/Layout/Header";
 import "./globals.css";
 import {Nunito_Sans, Inter, Poppins, Nova_Square, Onest, Mochiy_Pop_P_One} from "next/font/google"
+import Footer from "@/components/Layout/Footer";
 
 
  
 const nunitoSans = Nunito_Sans({
   subsets: ['latin'],
-  weight: ['200','300', '600', '800'],
+  weight: ['200','400', '600', '800'],
   variable: "--font-nunito-sans"
 })
 
@@ -49,8 +51,11 @@ export default function RootLayout({ children }) {
     <html lang="en"
     className={`${nunitoSans.variable} ${mochy.variable} ${inter.variable} ${poppins.variable} ${nova.variable} ${onest.variable}`}
     >
-      <body className={`px-[8px] ${nunitoSans.className}`} >
+      <body className={` ${nunitoSans.className}`} >
+      <Header />
         {children}
+      <Footer />
+
       </body>
     </html>
   );
