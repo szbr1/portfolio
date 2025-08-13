@@ -17,17 +17,17 @@ function Area() {
         toggle === "about" ?
 
         <div className='w-full flex justify-between gap-12 items-center '>
-            <div className='w-[155]  lg:w-[26rem] lg:h-[40rem] h-[232]'>
+            <div className='w-[138] relative  lg:w-[26rem] lg:h-[40rem] h-[232]'>
                 <img 
                 src="/bottom.png" 
                 alt="" 
-                className='object-cover h-full w-full pb-5'
+                className='absolute top-0  left-4 object-cover h-full w-full pb-5'
                 />
             </div>
 
-            <div className='w-[185px] lg:w-[34rem] flex flex-col gap-2 mt-14 lg:gap-8'>
-                <h3 className=' font-poppins text-[14px] lg:text-[29px]'>Driving Innovation in the Digital World with <span className='text-title'>MERN Stack</span> Expertise</h3>
-                <h5 className='  font-poppins text-[8px] lg:pr-11  text-light-gray/70 md:text-[13px] lg:text-[16px]'>I build seamless, scalable web applications with the MERN stack—crafting elegant user interfaces and robust backends that turn ideas into impactful digital products. From dynamic e-commerce sites to responsive platforms, I combine design and functionality to deliver secure, high-performance solutions with creativity and precision.</h5>
+            <div className='w-[250px] lg:w-[34rem] flex flex-col gap-2 mt-14 lg:gap-8'>
+                <h3 className=' font-poppins font-semibold text-[16px] lg:text-[29px]'>Driving Innovation in the Digital World with <span className='text-title'>MERN Stack</span> Expertise</h3>
+                <h5 className='  font-poppins text-[12px] lg:pr-11 leading-[15px] md:leading-[24px]  text-light-gray/70 md:text-[13px] lg:text-[16px]'>I build scalable MERN stack applications with intuitive UIs and robust backends, turning ideas into high-performance, secure digital products. From dynamic e-commerce sites to responsive platforms, I blend design and functionality with creativity and precision.</h5>
 
                 <div className='hidden md:flex justify-between w-full items-center'>
                     <div className='flex flex-col gap-2 '>

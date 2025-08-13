@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 function Hero() {
@@ -23,8 +24,13 @@ function Hero() {
             <div className='w-full text-[17px] flex justify-end '>
                 <div className='font-Nunito-Sans font-semibold md:tracking-[6] tracking-[4] lg:tracking-[8] md:text-[28px] lg:text-[40px]'>It's Me</div>
             </div>
+
+            {/* // cv  button  */}
             <div className='w-full'>
-              <div className='bg-light-gray/10 text-sm lg:text-lg lg:py-2 lg:px-6 px-4 py-[5px] mt-6 w-fit'>Download CV </div>
+              <div className='bg-light-gray/10 text-sm lg:text-lg lg:py-2 lg:px-6 px-4 py-[5px] mt-6 w-fit'> 
+              <Link href={"/cv"} >
+              Download CV
+              </Link> </div>
             </div>
 
             {/* logos  */}

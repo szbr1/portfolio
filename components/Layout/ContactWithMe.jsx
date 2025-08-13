@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 function ContactWithMe() {
@@ -19,20 +20,20 @@ function ContactWithMe() {
          </div>
 
          <div className='flex justify-between lg:flex-col items-center mt-28 px-4 lg:gap-4'>
-              <div  className='lg:flex justify-start lg:items-center lg:w-96  lg:gap-8'>
+              <Link href={"https://wa.me/923205016373"}  className='lg:flex justify-start lg:items-center lg:w-96  lg:gap-8'>
                 <img src={'/call_logo.svg'} height={50} width={50} alt='' className='lg:size-16' />
                 <div className='hidden font-poppins font-light lg:block'>+92 3205016373</div>
                 
-              </div>
+              </Link>
               
-              <div className='lg:flex justify-start lg:items-center lg:gap-8 lg:w-96 '>
+              <a href={"mailto:szb8480@gmail.com"} className='lg:flex justify-start lg:items-center lg:gap-8 lg:w-96 '>
                 <img src={'/inbox.svg'} height={50} width={50} alt='' className='lg:size-16' />
-                <div className='hidden font-poppins font-light lg:block'>szb8480@gmail.com</div>
-              </div>
-              <div className='lg:flex justify-start lg:items-center lg:w-96  lg:gap-8'>
+                <div className='hidden font-poppins font-light lg:block'>szb8480@gmail.com kk</div>
+              </a>
+              <Link href={"https://www.linkedin.com/in/szaib-dev.com"} className='lg:flex justify-start lg:items-center lg:w-96  lg:gap-8'>
                 <img src={'/Frame.svg'} height={50} width={50} alt='' className='lg:size-16 '  />
-                <div className='hidden font-poppins font-light lg:block'>inkedin.com/in/szaib-dev</div>
-              </div>
+                <div className='hidden font-poppins font-light lg:block'>linkedin.com/in/szaib-dev</div>
+              </Link>
          </div>
 
        </div>

@@ -52,7 +52,6 @@ export default function RootLayout({ children }) {
     className={`${nunitoSans.variable} ${mochy.variable} ${inter.variable} ${poppins.variable} ${nova.variable} ${onest.variable}`}
     >
       <body className={` ${nunitoSans.className}`} >
-      <Header />
         {children}
       <Footer />
 

@@ -1,3 +1,4 @@
+"use client"
 import { FaArrowUp } from "react-icons/fa";
 import React from 'react'
 
@@ -9,7 +10,7 @@ function Footer() {
 
         </div>
 
-        <div className='p-2 flex justify-between items-center gap-2 px-3 bg-light-gray/20'>Back To Top <FaArrowUp /></div>
+        <button onClick={()=> window.scrollTo({top: 0 , behavior: "smooth"})} className='p-2 flex justify-between items-center gap-2 px-3 bg-light-gray/20'>Back To Top <FaArrowUp /></button>
         
     </div>
   )
