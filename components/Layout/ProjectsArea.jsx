@@ -15,7 +15,7 @@ function ProjectsArea() {
   },[projects])
 
   return (
-    <div className='mt-25 mb-20' >
+    <div className='mt-25 mb-20' id='project-area'>
       <div className='flex justify-between items-center'>
 
         <div className='flex  items-center  gap-3'>

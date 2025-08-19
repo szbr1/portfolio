@@ -2,6 +2,8 @@ import Header from "@/components/Layout/Header";
 import "./globals.css";
 import {Nunito_Sans, Inter, Poppins, Nova_Square, Onest, Mochiy_Pop_P_One} from "next/font/google"
 import Footer from "@/components/Layout/Footer";
+import Providers from "./provider";
+import ContextProvider from "@/components/ContextProvider";
 
 
  
@@ -48,14 +50,19 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
+    <Providers>
+
     <html lang="en"
     className={`${nunitoSans.variable} ${mochy.variable} ${inter.variable} ${poppins.variable} ${nova.variable} ${onest.variable}`}
     >
       <body className={` ${nunitoSans.className}`} >
+        <ContextProvider>
         {children}
-      <Footer />
+        <Footer />
+        </ContextProvider>
 
       </body>
     </html>
+      </Providers>
   );
 }

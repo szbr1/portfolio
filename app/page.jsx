@@ -5,12 +5,15 @@ import ProjectsArea from '@/components/Layout/ProjectsArea'
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa6";
 import ContactWithMe from '@/components/Layout/ContactWithMe'
 import Header from '@/components/Layout/Header';
+import BacktoTop from '@/components/Buttons/backtoTop';
 
 
 function page() {
   return (
-    <div className='px-[8px] md:mx-[80] lg:mx-[106]'>
+    <>
       <Header />
+    <div className='relative px-[8px] md:mx-[80] lg:mx-[106]'>
+
 
       <Hero />
       <Area />
@@ -25,8 +28,9 @@ function page() {
       </div>
 
       <ContactWithMe />
-      <div className='h-30 w-full'></div>
+      <div className='hidden lg:block h-30 w-full'></div>
     </div>
+    </>
   )
 }
 

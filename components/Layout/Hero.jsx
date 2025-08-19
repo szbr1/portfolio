@@ -29,7 +29,7 @@ function Hero() {
             <div className='w-full'>
               <div className='bg-light-gray/10 text-sm lg:text-lg lg:py-2 lg:px-6 px-4 py-[5px] mt-6 w-fit'> 
               <Link href={"/cv"} >
-              Download CV
+              Check My CV
               </Link> </div>
             </div>
 

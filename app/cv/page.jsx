@@ -1,6 +1,7 @@
-import React from 'react';
+import React from "react";
 
 export default function CV() {
+
   return (
     <div className="bg-gray-50 text-gray-900 font-sans p-2 lg:p-8">
       <div className="max-w-3xl mx-auto bg-white shadow-xl rounded-lg p-8">

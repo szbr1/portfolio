@@ -27,7 +27,7 @@ function ContactWithMe() {
   
   
   return (
-    <div className='lg:px-20'>
+    <div className='lg:px-20' id='contact-area'>
      
       <div className='flex justify-center items-center'>
         <h3 className='font-Nunito-Sans font-bold text-title text-3xl md:text-4xl lg:text-5xl'>

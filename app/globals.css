@@ -22,3 +22,7 @@
   --font-intrn: var(--font-inter);
   --font-mochy: var(--font-mochy);
 }
+
+html {
+  scroll-behavior: smooth;
+}

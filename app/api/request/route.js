@@ -2,6 +2,7 @@ import dbConnect from "@/lib/db";
 import RequestModel from "@/lib/model/request.model";
 import { NextResponse } from "next/server";
 
+
 export async function POST(req){
     try {
         await dbConnect()
@@ -25,4 +26,17 @@ export async function POST(req){
         console.error(error)
       return  NextResponse.json({msg: "There is Some Network Issues Try again letter."})
     }
+}
+
+export async function GET(req){
+   try {
+    await dbConnect();
+    const result = await RequestModel.find({})
+    
+      console.log("::request",result)
+    return NextResponse.json(result)
+   } catch (error) {
+     console.error(error)
+     NextResponse.json("Server Error")
+   }
 }

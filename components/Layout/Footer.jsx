@@ -1,16 +1,15 @@
-"use client"
-import { FaArrowUp } from "react-icons/fa";
 import React from 'react'
+import BacktoTop from "../Buttons/backtoTop";
 
 function Footer() {
   return (
-    <div className='flex mt-[64px] justify-between items-center px-1 p-8 bg-light-gray/10 shadow lg:px-4'>
+    <div className='flex  justify-between items-center px-1 md:p-8 p-4 bg-light-gray/10 shadow lg:px-18'>
         <div className='font-poppins  tracking-[1px] text-[8px] md:text-lg '>
         © 2025 szaib.dev | All rights reserved.
 
         </div>
-
-        <button onClick={()=> window.scrollTo({top: 0 , behavior: "smooth"})} className='p-2 flex justify-between items-center gap-2 px-3 bg-light-gray/20'>Back To Top <FaArrowUp /></button>
+     <BacktoTop />
+       
         
     </div>
   )

@@ -1,17 +1,18 @@
 "use client"
 
 import Link from 'next/link';
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { Context } from '../ContextProvider';
 
 function Area() {
 
-    const [toggle , setToggle] = useState("about");
+   const {toggle , setToggle} = useContext(Context)
     
   return (
-    <div className='mt-28 flex justify-center items-center flex-col'>
+    <div className='mt-28 flex justify-center items-center flex-col ' id='services-area'>
          <div className='flex'>
             <button onClick={()=> setToggle("about")} className={`w-28 lg:w-60 lg:text-2xl text-sm font-semibold border border-light-gray/30 py-[6px] flex justify-center items-center ${toggle === "about" ? "bg-light-gray/20" :""}`}>About Me</button>
-            <button onClick={()=> setToggle("service")} className={` ${toggle === "service" ? "bg-light-gray/20" :""} w-28 lg:w-60 lg:text-2xl text-sm font-semibold border border-light-gray/30 border-l-0 py-[6px] flex justify-center items-center`}>Services</button>
+            <button onClick={()=> setToggle("services")} className={` ${toggle === "services" ? "bg-light-gray/20" :""} w-28 lg:w-60 lg:text-2xl text-sm font-semibold border border-light-gray/30 border-l-0 py-[6px] flex justify-center items-center`}>Services</button>
          </div>
      {
         toggle === "about" ?
@@ -47,7 +48,7 @@ function Area() {
             </div>
         </div>
     : null}
-        {toggle === "service" ?
+        {toggle === "services" ?
         <div className='w-full flex  items-center flex-col gap-8 lg:gap-12 text-[11px] lg:text-2xl mt-12 lg:mt-32'>
 
              <div className='w-full flex justify-between items-start gap-3'>
