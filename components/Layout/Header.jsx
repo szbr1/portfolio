@@ -43,7 +43,11 @@ function Header() {
         </button>
 
         <div className="text-2xl md:text-4xl lg:px-20 lg:text-5xl md:gap-4 lg:gap-5 uppercase flex flex-col gap-2 pl-5  tracking-[1px]">
-            <Link href={"#services-area"} onClick={()=> setSwitch(!Switch)} className=" inline-block"><span className="hover:text-title cursor-pointer">Services</span></Link>
+            <Link href={"#services-area"} onClick={()=> {
+              setSwitch(!Switch)
+              setToggle("services")
+            }
+              } className=" inline-block"><span className="hover:text-title cursor-pointer">Services</span></Link>
             <Link href={"#project-area"} onClick={()=> setSwitch(!Switch)} className=" inline-block"><span className="hover:text-title cursor-pointer">Projects</span></Link>
             <Link href={"#contact-area"} onClick={()=> setSwitch(!Switch)} className=" inline-block"><span className="hover:text-title cursor-pointer">Contact Us </span></Link>
         </div>
