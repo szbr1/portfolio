@@ -1,129 +1,159 @@
-"use client"
+"use client";
 
-import axios from 'axios';
-import Link from 'next/link';
-import React, { useState } from 'react';
-
+import axios from "axios";
+import Link from "next/link";
+import React, { useState } from "react";
 
 function ContactWithMe() {
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    description: "",
+  });
+  const [responseM, setResponseM] = useState("");
 
-  //state mang..
-  const [formData , setFormData] = useState({username: "",email: "", description: ""});
-  const [responseM, setResponseM] = useState("")
-  
-  const handleChange = (e)=>{
-     setFormData({...formData, [e.target.name]: e.target.value})
-  }
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-  const handleSubmit = async()=>{
-    const result = await axios.post("/api/request" , formData)
-    setResponseM(result.data.msg)
-    console.log(responseM)
-    if(result.data){
-      setFormData({username: "" , email: "", description: ""})
+  const handleSubmit = async () => {
+    const result = await axios.post("/api/request", formData);
+    setResponseM(result.data?.msg || "");
+    if (result.data) {
+      setFormData({ username: "", email: "", description: "" });
     }
-    
-  }
-  
-  
+  };
+
   return (
-    <div className='lg:px-20' id='contact-area'>
-     
-      <div className='flex justify-center items-center'>
-        <h3 className='font-Nunito-Sans font-bold text-title text-3xl md:text-4xl lg:text-5xl'>
+    <section
+      className="lg:px-20"
+      id="contact-area"
+      aria-labelledby="contact-heading"
+    >
+      <header className="flex justify-center items-center">
+        <h2
+          id="contact-heading"
+          className="font-Nunito-Sans font-bold text-title text-3xl md:text-4xl lg:text-5xl"
+        >
           Get Into Touch
-        </h3>
+        </h2>
+      </header>
 
-      </div>
-      <div className='flex flex-col lg:flex-row w-full justify-between'>
+      <div className="flex flex-col lg:flex-row w-full justify-between">
+        {/* FORM */}
+        <div className="w-full flex flex-col gap-2 px-4 mt-16 lg:mt-32 lg:w-2/5">
+          {responseM && (
+            <div className="w-full py-6">
+              <p className="bg-title py-4 text-center text-light-gray/80">
+                {responseM}
+              </p>
+            </div>
+          )}
 
-        <div className='w-full flex flex-col gap-2 px-4 mt-16 lg:mt-32 lg:w-2/5'>
-      { responseM.length > 0 ? 
-        <div className='w-full transition-all justify-center items-center py-6'>
-           <p className=' bg-title py-4  text-center text-light-gray/80'>
-             {responseM}
-           </p>
-        </div>
-        : null}
+          <label className="sr-only" htmlFor="username">
+            Full Name
+          </label>
           <input
-            type='text'
-            name='username'
+            id="username"
+            type="text"
+            name="username"
             value={formData.username}
             onChange={handleChange}
-            placeholder='FullName'
-            className='font-Nunito-Sans w-full lg:p-5 lg:text-xl outline-none p-2 tracking-[2] border-light-gray/20 border'
+            placeholder="Full Name"
+            className="font-Nunito-Sans w-full lg:p-5 lg:text-xl outline-none p-2 tracking-[2] border-light-gray/20 border"
           />
+
+          <label className="sr-only" htmlFor="email">
+            Email Address
+          </label>
           <input
-            type='text'
-            placeholder='Email'
+            id="email"
+            type="email"
+            name="email"
             value={formData.email}
-            name='email'
             onChange={handleChange}
-            className='font-Nunito-Sans w-full lg:p-5 lg:text-lg placeholder:text-xl outline-none p-2 tracking-[2] border-light-gray/20 border'
+            placeholder="Email"
+            className="font-Nunito-Sans w-full lg:p-5 lg:text-lg outline-none p-2 tracking-[2] border-light-gray/20 border"
           />
+
+          <label className="sr-only" htmlFor="description">
+            Message
+          </label>
           <textarea
-            type='text'
-            name='description'
+            id="description"
+            name="description"
             value={formData.description}
             onChange={handleChange}
-            placeholder='Description'
-            className='font-Nunito-Sans w-full lg:p-5 h-44 lg:h-56 outline-none p-2 border-light-gray/20 border'
+            placeholder="Description"
+            className="font-Nunito-Sans w-full lg:p-5 h-44 lg:h-56 outline-none p-2 border-light-gray/20 border"
           />
-          <div className='relative mt-4'>
-            <button onClick={handleSubmit} className='h-10 w-32 absolute top-0 left-2 bg-title uppercase z-10'>
+
+          <div className="relative mt-4">
+            <button
+              onClick={handleSubmit}
+              className="h-10 w-32 absolute top-0 left-2 bg-title uppercase z-10"
+            >
               Submit
             </button>
-            <button className='h-10 w-32 absolute top-2 left-0 bg-light-gray/20 uppercase'></button>
+            <span
+              aria-hidden="true"
+              className="h-10 w-32 absolute top-2 left-0 bg-light-gray/20"
+            />
           </div>
         </div>
 
-        <div className='flex justify-between lg:flex-col items-center mt-28 px-4 lg:gap-4'>
+        {/* CONTACT LINKS */}
+        <address className="flex justify-between lg:flex-col items-center mt-28 px-4 lg:gap-4 not-italic">
           <Link
-            href={'https://wa.me/923205016373'}
-            target='_blank'
-            className='lg:flex justify-start lg:items-center lg:w-96 lg:gap-8'
+            href="https://wa.me/923205016373"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="lg:flex justify-start lg:items-center lg:w-96 lg:gap-8"
+            aria-label="WhatsApp contact"
           >
             <img
-              src={'/call_logo.svg'}
-              height={50}
-              width={50}
-              alt=''
-              className='lg:size-16'
+              src="/call_logo.svg"
+              alt="Contact Shahzaib Mirza on WhatsApp"
+              className="lg:size-16"
             />
-            <div className='hidden font-poppins font-light lg:block'>+92 3205016373</div>
+            <span className="hidden font-poppins font-light lg:block">
+              +92 320 5016373
+            </span>
           </Link>
 
           <a
-            href={'mailto:szb8480@gmail.com'}
-            className='lg:flex justify-start lg:items-center lg:gap-8 lg:w-96'
+            href="mailto:szb84840@gmail.com"
+            className="lg:flex justify-start lg:items-center lg:gap-8 lg:w-96"
           >
             <img
-              src={'/inbox.svg'}
-              height={50}
-              width={50}
-              alt=''
-              className='lg:size-16'
+              src="/inbox.svg"
+              alt="Email Shahzaib Mirza"
+              className="lg:size-16"
             />
-            <div className='hidden font-poppins font-light lg:block'>szb8480@gmail.com kk</div>
+            <span className="hidden font-poppins font-light lg:block">
+              szb84840@gmail.com
+            </span>
           </a>
 
           <Link
-            href={'https://www.linkedin.com/in/szaib-dev.com'}
-            target='_blank'
-            className='lg:flex justify-start lg:items-center lg:w-96 lg:gap-8'
+            href="https://www.linkedin.com/in/szaib-dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="lg:flex justify-start lg:items-center lg:w-96 lg:gap-8"
+            aria-label="LinkedIn profile"
           >
             <img
-              src={'/Frame.svg'}
-              height={50}
-              width={50}
-              alt=''
-              className='lg:size-16 '
+              src="/Frame.svg"
+              alt="Shahzaib Mirza LinkedIn profile"
+              className="lg:size-16"
             />
-            <div className='hidden  font-poppins font-light lg:block'>linkedin.com/in/szaib-dev</div>
+            <span className="hidden font-poppins font-light lg:block">
+              linkedin.com/in/szaib-dev
+            </span>
           </Link>
-        </div>
+        </address>
       </div>
-    </div>
+    </section>
   );
 }
 
